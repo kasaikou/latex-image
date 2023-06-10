@@ -23,5 +23,5 @@ RUN apt-get install -y --no-install-recommends perl && \
     cd install-tl-2* && \
     echo I | ./install-tl -no-gui -repository http://ftp.riken.go.jp/pub/CTAN/systems/texlive/tlnet
 
-ENV PATH=${PATH}:/usr/local/texlive/2022/bin/x86_64-linux
+ENV PATH=${PATH}:/usr/local/texlive/2023/bin/x86_64-linux
 RUN tlmgr install collection-langjapanese collection-langcjk
