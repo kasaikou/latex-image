@@ -24,4 +24,6 @@ RUN apt-get install -y --no-install-recommends perl && \
     echo I | ./install-tl -no-gui -repository http://ftp.riken.go.jp/pub/CTAN/systems/texlive/tlnet
 
 ENV PATH=${PATH}:/usr/local/texlive/2023/bin/x86_64-linux
-RUN tlmgr install collection-langjapanese collection-langcjk
+RUN tlmgr repository add http://contrib.texlive.info/current tlcontrib && \
+    tlmgr pinning add tlcontrib '*' && \
+    tlmgr install collection-langjapanese collection-langcjk japanese-otf-nonfree collection-fontsrecommended luatex
